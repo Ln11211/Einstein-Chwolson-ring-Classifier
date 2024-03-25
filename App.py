@@ -20,9 +20,9 @@ st.markdown('Gravitational lensing halo classifier. The halo substructures are c
 def main():
     file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
     class_btn = st.button("Classify")
-    if uploaded_file is not None:
+    if file_uploaded is not None:
         valid_extensions = ["jpg", "jpeg", "png"]
-        file_extension = uploaded_file.name.split(".")[-1].lower()
+        file_extension = file_uploaded.name.split(".")[-1].lower()
         if file_extension in valid_extensions:
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
             image = cv2.imdecode(file_bytes,cv2.IMREAD_COLOR)
