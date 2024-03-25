@@ -43,7 +43,7 @@ def main():
 
 
 def predict(image):
-    classifier_model = "calssifier will come here LN [Change this]"
+    classifier_model = "Glensinghalo_classifier.h5"
     model = load_model(classifier_model, compile=False)
     test_image = cv2.resize(image,(150,150))
     test_image = test_image.reshape((-1,150,150,3))
