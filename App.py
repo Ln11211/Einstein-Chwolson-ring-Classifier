@@ -9,8 +9,6 @@ from tensorflow.keras import preprocessing
 import time
 fig = plt.figure()
 
-class TrueDivide(tf.keras.layers.Layer):
-    pass
 
 with open("custom.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -47,8 +45,7 @@ def main():
 
 def predict(image):
     classifier_model = "Glensinghalo_classifier.h5"
-    with keras.utils.custom_object_scope({'TrueDivide':TrueDivide}):
-        model = load_model(classifier_model, compile=False) #might want to try loading with weights only next time
+    model = load_model(classifier_model, compile=False) #might want to try loading with weights only next time, [LN look into it !!! mate]
     test_image = cv2.resize(image,(150,150))
     test_image = test_image.reshape((-1,150,150,3))
     test_image = keras.applications.resnet_v2.preprocess_input(test_image)
