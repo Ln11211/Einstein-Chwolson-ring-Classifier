@@ -28,6 +28,7 @@ def main():
             file_bytes = np.asarray(bytearray(file_uploaded.read()), dtype=np.uint8)
             image = cv2.imdecode(file_bytes,cv2.IMREAD_COLOR)
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            image = cv2.resize(image,(150,150))
         
     if class_btn:
         if file_uploaded is None:
@@ -45,18 +46,18 @@ def main():
 
 def predict(image):
     classifier_model = "Glensinghalo_classifier.h5"
-    model = load_model(classifier_model, compile=False) #might want to try loading with weights only next time, [LN look into it !!! mate]
-    test_image = cv2.resize(image,(150,150))
-    test_image = test_image.reshape((-1,150,150,3))
-    test_image = keras.applications.resnet_v2.preprocess_input(test_image)
+    model = load_model(classifier_model) #might want to try loading with weights only next time, [LN look into it !!! mate]
+    test_image = image.reshape((-1,150,150,3))
+    print(np.shape(test_image))
+    # test_image = keras.applications.resnet_v2.preprocess_input(test_image)
     class_names = [
           'no',
           'sphere',
           'vort']
     predictions = model.predict(test_image)
+    print('predicitions is',predictions[0])
     scores = predictions[0]
-    scores = scores.numpy()    
-    result = f"{class_names[np.argmax(scores)]} substructure with a { (100 * np.max(scores)).round(2) } % confidence." 
+    result = f"scores is {scores} and {class_names[np.argmax(scores)]} substructure with a { (100 * np.max(scores)).round(2) } % confidence." 
     return result
 
 

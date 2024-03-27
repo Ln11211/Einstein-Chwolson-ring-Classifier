@@ -20,14 +20,14 @@ body {
 ----------------------
 */
 h1{
-    color: #000;
+    color: #fff;
     text-align: center;
   }
   h3{
-    color: #000;
+    color: #fff;
   }
   p{
-    color: #000;
+    color: #fff;
   }
   /*
   ----------------------
@@ -49,9 +49,9 @@ h1{
   
   .stTextInput
   {
-    color: #000000;
+    color: #fff;
   }
   .stTextInput > div > div > input {
-    color: #000000;
+    color: #fff;
   }
   
