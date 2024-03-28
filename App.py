@@ -50,7 +50,7 @@ def main():
 
 
 def predict(image):
-    classifier_model = "https://github.com/Ln11211/Einstein-Chwolson-ring-Classifier/blob/8b167bf7e3318ffe93577dc235b43620d95d9c85/Glensinghalo_classifier.h5"
+    classifier_model = "Glensinghalo_classifier.h5"
     model = load_model(classifier_model) #might want to try loading with weights only next time, [LN look into it !!! mate]
     test_image = image.reshape((-1,150,150,3))
     print(np.shape(test_image))
