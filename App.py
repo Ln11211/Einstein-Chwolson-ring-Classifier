@@ -18,6 +18,11 @@ st.title('Gravitational lensing halo substructure Classifier')
 st.markdown('Gravitational lensing halo classifier. The halo substructures are classified into three classes: "No substructure", "Vortex substructure" and "Sphere substructure".')
 
 
+with st.container():
+    st.write('Some examples to try')
+    st.image(['no.png','sphere.png','vort.png'],caption=['no substructure','sphere substructure','vort substructure'])
+
+
 def main():
     file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
     class_btn = st.button("Classify")
@@ -29,7 +34,7 @@ def main():
             image = cv2.imdecode(file_bytes,cv2.IMREAD_COLOR)
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             image = cv2.resize(image,(150,150))
-        
+    
     if class_btn:
         if file_uploaded is None:
             st.write("Invalid command, please upload an image")
@@ -45,7 +50,7 @@ def main():
 
 
 def predict(image):
-    classifier_model = "Glensinghalo_classifier.h5"
+    classifier_model = "https://github.com/Ln11211/Einstein-Chwolson-ring-Classifier/blob/8b167bf7e3318ffe93577dc235b43620d95d9c85/Glensinghalo_classifier.h5"
     model = load_model(classifier_model) #might want to try loading with weights only next time, [LN look into it !!! mate]
     test_image = image.reshape((-1,150,150,3))
     print(np.shape(test_image))
