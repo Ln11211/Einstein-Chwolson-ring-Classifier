@@ -17,7 +17,7 @@ st.markdown('Gravitational lensing halo classifier. The halo substructures are c
 
 with st.container():
     st.write('Some examples to try')
-    st.image(['sample_images\\no.png','sample_images\sphere.png','sample_images\\vort.png'],caption=['no substructure','sphere substructure','vort substructure'])
+    st.image(['sample_images/no.png','sample_images/sphere.png','sample_images/vort.png'],caption=['no substructure','sphere substructure','vort substructure'])
 
 
 def main():
