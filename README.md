@@ -19,3 +19,6 @@ The model classifies the Dark matter substructure into the following three class
 **Vortex Substructure**: Gravitational Lensing Images simulated with the superfluid dark matter
 
 ![vort substructure](https://github.com/Ln11211/Einstein-Chwolson-ring-Classifier/assets/91385411/846fc231-df15-419d-956c-b156eec56176)    (*vort substructure*)
+
+
+Update: The dataset was prepared from a parapet object of graviational lensing datapoints by myself using python libraries and then converted into a datset and is available on Kaggle. Kaggle notebook for training the model is "https://www.kaggle.com/code/malyala11211/gravitational-lensing-classifier" 
